@@ -27,4 +27,4 @@ jobs:
     needs: job1
     steps:
       - name: Use the output variable from job1
-        run: "echo The variable from job1 is: ${my_var}"
+        run: "echo The variable from job1 is: ${{my_var}}"
