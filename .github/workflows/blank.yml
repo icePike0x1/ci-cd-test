@@ -17,8 +17,6 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    outputs:
-      my_var: ${{ steps.set-output.outputs.my_var }}
     steps:
       - name: Set an output variable
         id: set-output
@@ -29,4 +27,4 @@ jobs:
     needs: job1
     steps:
       - name: Use the output variable from job1
-        run: "echo The variable from job1 is: ${{ needs.job1.outputs.my_var }}"
+        run: "echo The variable from job1 is: ${my_var}"
